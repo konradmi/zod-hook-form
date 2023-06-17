@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es2018",                                
+    "module": "commonjs",                             
+    "esModuleInterop": true,   
+    "jsx": "react",         
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "declarationMap": true,
+    "strict": true,
+    "outDir": "./lib",
+  },
+  "include": ["src"],
+}
