@@ -1,5 +1,3 @@
-'use client'
-
 import * as z from 'zod'
 
 import { ZodForm, ZodFormInput, ZodFormSubmitButton, ZodFormCancelButton, ZodFormSubmitError } from '../../src'
