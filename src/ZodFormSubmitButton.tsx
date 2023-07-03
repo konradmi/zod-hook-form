@@ -15,5 +15,3 @@ export const ZodFormSubmitButton = ({ label, className }: ZodFormSubmitButtonPro
     <button className={className} type='submit' disabled={isDisabled}>{label}</button>
   )
 }
-
-export default ZodFormSubmitButton

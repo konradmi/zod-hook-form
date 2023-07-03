@@ -14,7 +14,7 @@ type FormProps<T extends z.ZodType> = {
   schema: T
 }
 
-function ZodForm<T extends z.ZodType>({ initialValues, onSubmit, children, className, schema, submitValidation = () => Promise.resolve() }: FormProps<T>) {
+export const ZodForm = <T extends z.ZodType>({ initialValues, onSubmit, children, className, schema, submitValidation = () => Promise.resolve() }: FormProps<T>) => {
   const methods = useForm<z.infer<T>>({
     mode: 'onBlur',
     defaultValues: initialValues,
@@ -49,5 +49,3 @@ function ZodForm<T extends z.ZodType>({ initialValues, onSubmit, children, class
     </FormProvider>
   )
 }
-
-export default ZodForm

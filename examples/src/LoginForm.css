@@ -1,0 +1,16 @@
+.zod-input__input {
+  border: 3px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+.zod-input--error {
+  color: red;
+}
+
+.submit-button {
+  color: green;
+}
+
+.cancel-button {
+  color: red;
+}
