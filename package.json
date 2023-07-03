@@ -2,12 +2,17 @@
   "name": "zod-hook-form",
   "version": "1.0.0",
   "description": "react-hook-form + zod wrapper",
-  "main": "index.ts",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
   "repository": "git@github.com:konradmi/zod-hook-form.git",
   "author": "Konrad Miekus <miekus.konrad@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "rm -rf ./lib && tsc"
+    "build": "rm -rf ./lib && tsc",
+    "publish": "yarn build && npm publish"
   },
   "devDependencies": {
     "@types/react": "^18.2.12",

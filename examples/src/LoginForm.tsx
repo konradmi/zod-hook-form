@@ -1,6 +1,6 @@
 import * as z from 'zod'
 
-import { ZodForm, ZodFormInput, ZodFormSubmitButton, ZodFormCancelButton, ZodFormSubmitError } from '../../src'
+import { ZodForm, ZodFormInput, ZodFormSubmitButton, ZodFormCancelButton, ZodFormSubmitError } from 'zod-hook-form'
 
 import './LoginForm.css'
 
