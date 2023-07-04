@@ -1,8 +1,11 @@
 ## zod-hook-form
 
-Thin wrapper over react-hook-form and zod. 
+Thin wrapper over react-hook-form and zod. Types are infered based on the provided zod schema. It also provides helpers for dealing with:
+- form inputs
+- form arrays
 
-### Usage
+
+### Examples
 
 A login form:
 
@@ -45,9 +48,10 @@ const LoginForm = () => {
 }
 ```
 
-To run the example:
+To run the examples:
 
 ```
 cd examples
+yarn
 yarn run dev
 ```

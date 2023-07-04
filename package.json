@@ -1,6 +1,6 @@
 {
   "name": "zod-hook-form",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "react-hook-form + zod wrapper",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
