@@ -9,11 +9,17 @@ type ZodFormInputProps = {
 
 export const ZodFormInput = ({ name, type, className }: ZodFormInputProps) => {
   const { register, formState: { errors } } = useFormContext()
+
+  const getError = () => {
+    return name.split('.').reduce((acc, curr) => {
+      return acc?.[curr]
+    }, (errors || {}) as any)
+  }
   
   return (
     <div className={className}>
       <input className={`${className}__input`} {...register(name)} type={type}/>
-      { errors[name] && <div className={`${className}--error`}>{ errors[name]?.message as string }</div> }
+      { getError() && <div className={`${className}--error`}>{ getError().message as string }</div> }
     </div>
   )
 }
