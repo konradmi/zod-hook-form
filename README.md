@@ -3,7 +3,7 @@
 Thin wrapper over react-hook-form and zod. Types are infered based on the provided zod schema. It also provides helpers for dealing with:
 - form inputs
 - form arrays
-
+- custom form components
 
 ### Examples
 
@@ -47,6 +47,33 @@ const LoginForm = () => {
   )
 }
 ```
+
+A custom form input:
+
+```
+import { ZodFormElement } from 'zod-hook-form'
+import type { ComponentProps, ZodFormElementProps } from 'zod-hook-form'
+
+type FormInputProps = ZodFormElementProps & React.ComponentProps<'input'>
+
+const Input = ({ value, onChange, onBlur, error, ...rest }: ComponentProps) => {
+  return (
+    <input
+      value={value}
+      onChange={e => onChange(e.target.value)}
+      onBlur={onBlur}
+      {...rest}
+    />
+  )
+}
+
+const FormInput = (props: FormInputProps) => {
+  return (
+    <ZodFormElement {...props} component={Input}/>
+  )
+}
+```
+
 
 To run the examples:
 

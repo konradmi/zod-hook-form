@@ -1556,10 +1556,10 @@ yocto-queue@^0.1.0:
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
 
-zod-hook-form@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/zod-hook-form/-/zod-hook-form-1.0.3.tgz#acffccfbd456b8c1bc7aa26a59fdbaba8244b98f"
-  integrity sha512-qHRKekh45DG7zlsRnLy83ABY3EUrwsIb7n1j+TNy4TdEz5nI8Zsyu3UoO6IizGJp4IY4eElQuZ9WL5Od9LUljw==
+zod-hook-form@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/zod-hook-form/-/zod-hook-form-1.0.4.tgz#bfd8f76c7a27b3df43068f313fb0fbecf73ac870"
+  integrity sha512-6kUmoBIEHkA+7qqouinugyOjZ5j4Op52iBxPXZJ9CUxucd3xRD7KH//SXaMpNzJ3TuxSIB0ytC5caSRqcm5vLQ==
   dependencies:
     "@hookform/resolvers" "^3.1.1"
     react-hook-form "^7.44.3"
