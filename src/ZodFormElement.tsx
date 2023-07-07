@@ -1,24 +1,22 @@
 import React from 'react'
 import { useFormContext, Controller } from 'react-hook-form'
 
-export type ComponentProps = {
-  value: string
-  onChange: (value: string) => void
+export type ComponentProps<TValue> = {
+  value: TValue
+  onChange: (value: TValue) => void
   onBlur: () => void
   error? : boolean
 }
 
-export type ZodFormElementProps = Omit<InternalZodFormElementProps, 'component'>
-
-type InternalZodFormElementProps = {
-  component: (props: ComponentProps) => JSX.Element
+type InternalZodFormElementProps<TValue extends any> = {
+  component: (props: ComponentProps<TValue>) => JSX.Element
   name: string
   label?: string
-  parse?: (value: string) => string
-  format?: (value: string) => string
+  parse?: (value: TValue) => TValue
+  format?: (value: TValue) => TValue
 }
 
-export const ZodFormElement = ({ name, label, parse = value => value, format = value => value, component: Component, ...rest }: InternalZodFormElementProps) => {
+export const ZodFormElement = <TValue extends any>({ name, label, parse = value => value, format = value => value, component: Component, ...rest }: InternalZodFormElementProps<TValue>) => {
   const { control, formState: { errors } } = useFormContext()
 
   const getError = () => {

@@ -1,12 +1,9 @@
-import React from 'react'
 import * as z from 'zod'
 
 import { ZodFormElement, ZodForm, ZodFormSubmitButton, ZodFormCancelButton } from 'zod-hook-form'
-import type { ComponentProps, ZodFormElementProps } from 'zod-hook-form'
+import type { ComponentProps } from 'zod-hook-form'
 
-type FormInputProps = ZodFormElementProps & React.ComponentProps<'input'>
-
-const Input = ({ value, onChange, onBlur, error, ...rest }: ComponentProps) => {
+const Input = ({ value, onChange, onBlur, error, ...rest }: ComponentProps<string>) => {
   return (
     <input
       value={value}
@@ -14,12 +11,6 @@ const Input = ({ value, onChange, onBlur, error, ...rest }: ComponentProps) => {
       onBlur={onBlur}
       {...rest}
     />
-  )
-}
-
-const FormInput = (props: FormInputProps) => {
-  return (
-    <ZodFormElement {...props} component={Input}/>
   )
 }
 
@@ -52,11 +43,11 @@ const FormElement = () => {
     <ZodForm initialValues={initialValues} onSubmit={handleSubmit} schema={schema}>
       <div>
         <label htmlFor='firstName'>First Name</label>
-        <FormInput name='firstName' format={formatFirstName} parse={parseFirstName}/>
+        <ZodFormElement component={Input} name='firstName' format={formatFirstName} parse={parseFirstName}/>
       </div>
       <div>
         <label htmlFor='phone'>Phone</label>
-        <FormInput name='phone'/>
+        <ZodFormElement component={Input} name='phone'/>
       </div>
       <ZodFormSubmitButton label='Submit'/>
       <ZodFormCancelButton label='Cancel'/>

@@ -1,6 +1,7 @@
 import LoginForm from './LoginForm'
 import FormArray from './FormArray'
 import FormElement from './FormElement'
+import FormSelect from './FormSelect'
 
 function App() {
   return (
@@ -11,6 +12,8 @@ function App() {
       <FormArray />
       <h1>Example - ZodFormElement</h1>
       <FormElement />
+      <h1>Example - MUI Form Select</h1>
+      <FormSelect />
     </>
   )
 }

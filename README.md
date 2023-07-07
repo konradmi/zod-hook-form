@@ -7,7 +7,7 @@ Thin wrapper over react-hook-form and zod. Types are infered based on the provid
 
 ### Examples
 
-A login form:
+- A login form:
 
 ```
 import * as z from 'zod'
@@ -48,15 +48,13 @@ const LoginForm = () => {
 }
 ```
 
-A custom form input:
+- A custom form input:
 
 ```
 import { ZodFormElement } from 'zod-hook-form'
 import type { ComponentProps, ZodFormElementProps } from 'zod-hook-form'
 
-type FormInputProps = ZodFormElementProps & React.ComponentProps<'input'>
-
-const Input = ({ value, onChange, onBlur, error, ...rest }: ComponentProps) => {
+const Input = ({ value, onChange, onBlur, error, ...rest }: ComponentProps<string>) => {
   return (
     <input
       value={value}
@@ -67,13 +65,55 @@ const Input = ({ value, onChange, onBlur, error, ...rest }: ComponentProps) => {
   )
 }
 
-const FormInput = (props: FormInputProps) => {
+```
+
+Somewhere in the form:
+
+```
+...
+<ZodFormElement component={Input} name='phone'/>
+...
+
+```
+
+- Integration with 3rd party libraries:
+
+```
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+
+import { ZodFormElement, ZodForm, ZodFormInput, ZodFormSubmitButton, ZodFormCancelButton } from 'zod-hook-form'
+import type { ComponentProps } from 'zod-hook-form'
+
+const MUISelect = ({ value, onChange, onBlur, error, ...rest }: ComponentProps<number>) => {
   return (
-    <ZodFormElement {...props} component={Input}/>
+    <FormControl>
+      <InputLabel>Age</InputLabel>
+      <Select
+        value={value}
+        label="Age"
+        onChange={e => onChange(+e.target.value)}
+        {...rest}
+      >
+        <MenuItem value={10}>Ten</MenuItem>
+        <MenuItem value={18}>Eighteen</MenuItem>
+        <MenuItem value={20}>Twenty</MenuItem>
+        <MenuItem value={30}>Thirty</MenuItem>
+      </Select>
+    </FormControl>
   )
 }
 ```
+Somewhere in the form:
 
+```
+...
+<ZodFormElement name='age' component={MUISelect}/>
+...
+
+```
 
 To run the examples:
 
